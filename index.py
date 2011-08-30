@@ -3,13 +3,14 @@
 
 import web
 import logging
-from handlers import Index,Callback,Processer
+from handlers import Index,Callback,Processer,AuthRequest
 
 logging.basicConfig(level=0,format="%(asctime)s %(levelname)s %(message)s")
 
 urls = ('/','Index',
         '/process','Processer',
-        '/callback','Callback')
+        '/callback','Callback',
+        '/authrequest','AuthRequest')
 
 #render=web.template.render('templates/')
 
