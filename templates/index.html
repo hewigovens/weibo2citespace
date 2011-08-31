@@ -2,32 +2,7 @@
 <head>
     <meta charset = "utf-8">
     <link href="static/css/main.css" rel="stylesheet" type="text/css"/>
-    <script>
-        var checkBinding = function(weibo_type,checked) {
-            if (!checked)
-                return;
-            var url="/process?type="+weibo_type;
-            var xml_req = createXMLRequest();
-
-            xml_req.onreadystatechange = function (){
-                                            if (xml_req.readyState==4 && xml_req.status==200){
-                                                    //alert(xml_req.responseText);
-                                                    //parse reponse
-                                                    //do oauth
-                                                }
-                                            }
-            xml_req.open("GET",url,true);
-            xml_req.send();
-
-        }
-        var createXMLRequest = function() {
-            if (window.ActiveXObject)
-                return new ActiveXObject("Microsoft.XMLHTTP");
-            else if (window.XMLHttpRequest)
-                return new XMLHttpRequest();
-            else return false;
-        }
-    </script>
+    </script><script src="static/script/main.js"></script>
 </head>
 <body>
     <header>

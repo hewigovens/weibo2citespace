@@ -2,10 +2,7 @@
 # coding:utf-8
 
 import web
-import logging
 from handlers import Index,Callback,Processer,AuthRequest
-
-logging.basicConfig(level=0,format="%(asctime)s %(levelname)s %(message)s")
 
 urls = ('/','Index',
         '/process','Processer',
@@ -27,7 +24,6 @@ def main():
         app.run()
     except Exception,ex:
         print ex
-        logging.info("%r" % ex)
 
 if __name__ == '__main__':
     main()
