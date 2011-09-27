@@ -3,6 +3,7 @@
 # coding:utf-8
 import web
 import logging
+import auth
 
 logging.basicConfig(level=0,format="%(asctime)s %(levelname)s %(message)s")
 
@@ -11,10 +12,12 @@ db =web.database(dbn='sqlite',db="storages.db")
 
 
 class Index:
+    """Index page"""
     def GET(self):
         return render.index()
 
 class Callback:
+    """OAuth callback"""
     def GET(self):
         return render.error_404()
 
@@ -39,4 +42,9 @@ class Processer:
 
 class AuthRequest():
     def GET(self):
-        pass
+        indata=web.input()
+        weibo_type=indata.get("type",None)
+
+        if weibo_type:
+            auth.do_oauth(weibo_type)
+

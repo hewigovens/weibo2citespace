@@ -10,7 +10,10 @@
                                                     if (response == "false"){
                                                         //do oauth
                                                         //alert("false,need do oauth");
-                                                        location.href="http://t.163.com";
+                                                        var xml_req2 = createXMLRequest();
+                                                        var url="/authrequest?type="+weibo_type;
+                                                        xml_req2.open("GET",url,true);
+                                                        xml_req2.send();
                                                     }
                                                 }
                                             }
